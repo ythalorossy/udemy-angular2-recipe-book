@@ -17,6 +17,9 @@
               id="name"
               class="form-control"
               formControlName="name">
+              <div *ngIf="!recipeForm.get('name').valid">
+                Invalid title
+              </div>
           </div>
         </div>
       </div>
@@ -30,6 +33,9 @@
               class="form-control"
               formControlName="imagePath"
               #imageUrl>
+            <div *ngIf="!recipeForm.get('imagePath').valid">
+              Path can't be empty!
+            </div>
           </div>
         </div>
       </div>
