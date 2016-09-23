@@ -12,14 +12,16 @@ export class RecipeService {
   recipesChanged = new EventEmitter<Recipe[]>();
 
   private recipes: Recipe[] = [
-    new Recipe('Schnitzel', 'Very tasty', 'http://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-5.jpg', [
-      new Ingredient('Frensh Fries', 2),
-      new Ingredient('Pork Meat', 1),
-    ]),
-    new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
+    // new Recipe('Schnitzel', 'Very tasty', 'http://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-5.jpg', [
+    //   new Ingredient('Frensh Fries', 2),
+    //   new Ingredient('Pork Meat', 1),
+    // ]),
+    // new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
   ];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+    this.fetchData();
+  }
 
   getRecipes() {
     return this.recipes;
